@@ -1,0 +1,159 @@
+.section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+// 面板
+.panel {
+  width: 600px;
+  height: 300px;
+  background: red;
+  position: absolute;
+  top: 0;
+  transform-origin: left top;
+  animation: moveTop 2s forwards, moveRight 2s linear forwards;
+}
+
+@keyframes moveTop {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 250px;
+  }
+
+}
+
+@keyframes moveRight {
+  0% {
+    left: 0;
+    transform: scale(0.1);
+  }
+  50% {
+    left: 20%;
+    transform: scale(0.5);
+  }
+  70% {
+    left: 30%;
+    transform: scale(0.7);
+  }
+  100% {
+    left: 50%;
+    transform: translate(-50%) scale(1);
+  }
+}
+
+//山
+.shan { //animation无缝滚动
+  width: 100%;
+  height: 336px;
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+}
+
+.shan-content {
+  width: 500%;
+  height: 336px;
+  background: url("../images/bg1.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: shan 120s linear infinite;
+}
+
+@keyframes shan {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-66%);
+  }
+}
+
+
+//熊
+.bear {
+  width: 200px;
+  height: 100px;
+  background: url("../images/bear.png") no-repeat;
+  position: absolute;
+  bottom: 20px;
+  animation: bearRun 1s steps(8) infinite, move 2s forwards;
+}
+
+@keyframes bearRun {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1600px 0;
+  }
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+//座右铭
+.motto1 {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 25px;
+  position: absolute;
+  //background: deepskyblue;
+  left: 100px;
+  top: 120px;
+  overflow: hidden;
+  animation: stepMove 2s steps(21) 1.6s forwards;
+  transition: all 2s;
+  visibility: hidden;
+}
+
+@keyframes stepMove {
+  0% {
+    height: 0;
+    visibility: visible;
+  }
+  100% {
+    height: 520px;
+    visibility: visible;
+  }
+}
+
+.motto2 {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 25px;
+  position: absolute;
+  //background: deepskyblue;
+  left: 180px;
+  top: 140px;
+  overflow: hidden;
+  animation: motto2 2s steps(21) 4s forwards;
+  transition: all 2s;
+  visibility: hidden;
+}
+
+@keyframes motto2 {
+  0% {
+    height: 0;
+    visibility: visible;
+  }
+  100% {
+    height: 520px;
+    visibility: visible;
+  }
+}
